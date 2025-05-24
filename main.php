@@ -1,7 +1,7 @@
 <?php
 $acao = $_POST['acao'] ?? $_GET['acao'] ?? '';
 
-// Conexão com banco de dados (ajuste conforme necessário)
+// Conexão com banco de dados
 $mysqli = new mysqli("localhost", "usuario", "senha", "webmotors");
 if ($mysqli->connect_error) {
     die("Erro de conexão: " . $mysqli->connect_error);
@@ -14,16 +14,23 @@ switch ($acao) {
         $usuario = $_POST['usuario'] ?? '';
         $senha = $_POST['senha'] ?? '';
 
-        $stmt = $mysqli->prepare("SELECT * FROM usuarios WHERE nome=? AND senha=?");
-        $stmt->bind_param("ss", $usuario, $senha);
+        $stmt = $mysqli->prepare("SELECT * FROM usuarios WHERE nome=?");
+        $stmt->bind_param("s", $usuario);
         $stmt->execute();
         $resultado = $stmt->get_result();
 
         if ($resultado->num_rows > 0) {
-            echo "<h1>Bem-vindo, $usuario!</h1>";
-            echo "<a href='index.php'>Voltar à página inicial</a>";
+            $usuario_data = $resultado->fetch_assoc();
+
+            if (password_verify($senha, $usuario_data['senha'])) {
+                echo "<h1>Bem-vindo, $usuario!</h1>";
+                echo "<a href='index.php'>Voltar à página inicial</a>";
+            } else {
+                echo "<h1>Senha incorreta.</h1>";
+                echo "<a href='login.php'>Tentar novamente</a>";
+            }
         } else {
-            echo "<h1>Login inválido.</h1>";
+            echo "<h1>Usuário não encontrado.</h1>";
             echo "<a href='login.php'>Tentar novamente</a>";
         }
         break;
@@ -34,8 +41,11 @@ switch ($acao) {
         $email = $_POST['email'] ?? '';
         $senha = $_POST['senha'] ?? '';
 
+        $senha_hash = password_hash($senha, PASSWORD_DEFAULT);
+
         $stmt = $mysqli->prepare("INSERT INTO usuarios (nome, email, senha) VALUES (?, ?, ?)");
-        $stmt->bind_param("sss", $nome, $email, $senha);
+        $stmt->bind_param("sss", $nome, $email, $senha_hash);
+
         if ($stmt->execute()) {
             echo "<h1>Cadastro realizado com sucesso!</h1>";
             echo "<a href='login.php'>Fazer login</a>";
