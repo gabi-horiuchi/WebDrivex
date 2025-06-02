@@ -1,13 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>WebMotors</title>
+  <title>Drive-x vendas</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
     body {
       background: linear-gradient(to right, black, #63008a, #6b3fd1);
       font-family: cursive;
       text-align: center;
-      padding: 30px;
+      padding-top: 120px;
+      padding-left: 0;
+      padding-right: 0;
+    }
+    header{
+      background-color:black;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 40px;
+      box-sizing: border-box;
+    }
+    header img {
+      height: 80px;
+      border-radius: 8px;
+    }
+    nav {
+      display: flex;
+      gap: 15px;
     }
     h1 {
       color: aliceblue;
@@ -16,8 +39,7 @@
       color: aliceblue;
       background-color: #6b3fd1;
       display: inline-block;
-      margin: 10px;
-      padding: 12px 24px;
+      padding: 10px 5px;
       border-radius: 8px;
       font-size: 20px;
       text-decoration: none;
@@ -27,10 +49,10 @@
     }
     .pesquisa input {
       padding: 10px;
-      width: 600px;
+      width: 400px;
       border: 1px solid #ccc;
       border-radius: 6px;
-      font-size: 16px;
+      font-size: 13px;
     }
     .pesquisa button {
       color: aliceblue;
@@ -64,21 +86,25 @@
 </head>
 <body>
 
-  <h1>Bem-vindo à WebMotors</h1>
+  <h1>Bem-vindo à Drive-X </h1>
 
-  <div class="pesquisa">
-    <form method="GET" action="produto.php">
-      <input type="text" name="busca" placeholder="Buscar Anúncios...">
-      <button type="submit">Pesquisar</button>
-    </form>
-  </div>
+  <header>
+    <img src="c:\Users\user\Downloads\Logo.Drivex.png" alt="Logo Drive-x">
 
-  <div>
-    <a href="login.php" class="botao">Login</a>
-    <a href="criar-cadastro.php" class="botao">Criar Cadastro</a>
-    <a href="cadastrar-produto.php" class="botao">Cadastrar Produto</a>
-    <a href="produto.php" class="botao">Ver Produtos</a>
-  </div>
+    <div class="pesquisa">
+      <form method="GET" action="produto.php">
+        <input type="text" name="busca" placeholder="Buscar Anuncios...">
+        <button type="submit"><i class="fas fa-search"></i></button>
+      </form>
+    </div>
+
+    <nav>
+      <a href="login.php" class="botao">Login</a>
+      <a href="criar-cadastro.php" class="botao">Criar Cadastro</a>
+      <a href="cadastrar-produto.php" class="botao">Cadastrar Produto</a>
+      <a href="produto.php" class="botao">Ver Produtos</a>
+    </nav>
+  </header>
 
   <div class="produtos-populares">
     <h2>Mais Procurados</h2>

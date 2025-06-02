@@ -45,7 +45,7 @@
       if (isset($_GET['id'])) {
         $id = $_GET['id'];
 
-
+        // Exemplo de conexão e consulta futura
         
         $conn = new mysqli("localhost", "root", "", "webmotors");
         if ($conn->connect_error) {
