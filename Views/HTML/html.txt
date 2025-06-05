@@ -1,0 +1,1 @@
+Pasta destinada a armazenar os códigos das telas PHP com HTML
