@@ -1,0 +1,1 @@
+Pasta destinada aos arquivos CSS para estilização das correspondentes telas
