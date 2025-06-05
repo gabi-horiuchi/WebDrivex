@@ -1,0 +1,3 @@
+Pasta responsável por armazenar todas as imagens, organizadas conforme o banco de dados. 
+
+Favor não editar essa pasta
