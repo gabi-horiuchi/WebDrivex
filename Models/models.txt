@@ -1,0 +1,1 @@
+Gerenciamento absoluto dos banco de dados, desde SQL de referência, excel de base e clases direcionadas a extração do banco de dados. 
