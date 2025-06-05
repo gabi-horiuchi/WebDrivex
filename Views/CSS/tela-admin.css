@@ -1,0 +1,61 @@
+body {
+      font-family: cursive;
+      background: linear-gradient(to right, black, #63008a, #6b3fd1);
+      color: aliceblue;
+      padding: 100px 30px 30px 30px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #f2b10c;
+      margin-bottom: 30px;
+    }
+
+    table {
+      width: 100%;
+      max-width: 1000px;
+      margin: auto;
+      border-collapse: collapse;
+      background-color: rgba(0, 0, 0, 0.2);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 0 8px rgba(0,0,0,0.3);
+    }
+
+    th, td {
+      padding: 15px;
+      border-bottom: 1px solid #444;
+    }
+
+    th {
+      background-color: #6b3fd1;
+      color: white;
+    }
+
+    tr:hover {
+      background-color: rgba(255, 255, 255, 0.05);
+    }
+
+    img {
+      max-width: 100px;
+      border-radius: 8px;
+    }
+
+    form {
+      display: inline;
+    }
+
+    .botao {
+      background-color: #6b3fd1;
+      color: white;
+      padding: 8px 14px;
+      border: none;
+      border-radius: 6px;
+      font-size: 14px;
+      cursor: pointer;
+      margin: 3px;
+    }
+
+    .botao.excluir {
+      background-color: crimson;
+    }
