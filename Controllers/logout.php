@@ -1,8 +1,12 @@
 <?php
 
-session_start(); //iniciamos a sessão que foi aberta
-session_unset(); //limpamos as variaveis globais das sessões
-session_destroy(); //pei!!! destruimos a sessão ;)
+session_start(); //iniciamos a sessï¿½o que foi aberta
+session_unset(); //limpamos as variaveis globais das sessï¿½es
+session_destroy(); //pei!!! destruimos a sessï¿½o ;)
 
-echo "<script>alert('Você saiu!');top.location.href='login.php';</script>"; /*aqui você pode por alguma coisa falando que ele saiu ou fazer como eu, coloquei redirecionar para uma certa página*/
+echo "<script>
+        alert('VocÃª saiu!');top.location.href='login.php';
+            window.location.href = '../Views/HTML/index.php';
+    </script>";
+exit;
 ?>
